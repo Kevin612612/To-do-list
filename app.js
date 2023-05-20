@@ -167,7 +167,7 @@ function saveLocalTodos(todo) {
 }
 
 async function saveTodosInDB(todoObject) {
-    await fetch(`${vercelAddress}/todo`, {
+    await fetch(`https://to-do-list-orpin-theta.vercel.app/todo`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(todoObject)
@@ -189,7 +189,7 @@ function getTodos() {
 
 
 function getTodosFromDb() {
-    fetch(`${vercelAddress}/todo`, {
+    fetch(`https://to-do-list-orpin-theta.vercel.app/todo`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
     })
@@ -215,7 +215,7 @@ function removeLocalTodos(todo) {
 
 
 function removeDBTodos(todoObject) {
-    fetch(`${vercelAddress}/todo`, {
+    fetch(`https://to-do-list-orpin-theta.vercel.app/todo`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(todoObject)
@@ -225,7 +225,7 @@ function removeDBTodos(todoObject) {
 
 // { name: todo.firstChild.textContent}
 function markTodoDone(todo) {
-    fetch(`${vercelAddress}/todo/done`, {
+    fetch(`https://to-do-list-orpin-theta.vercel.app/todo/done`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: todo })
