@@ -23,12 +23,12 @@ app.use(jsonBodyMiddleware)
 const PORT = 3001
 
 // Serve static files in the 'public' folder
-app.use(express.static(path.resolve(__dirname)));
+// app.use(express.static(path.resolve(__dirname)));
 
 //HOME PAGE
-app.get('/', (req: Request, res: Response) => {
+<!-- app.get('/', (req: Request, res: Response) => {
     res.sendFile(__dirname + 'index.html')
-})
+}) -->
 
 //GET ALL TODO
 app.get('/todo', async (req: Request, res: Response) => {
