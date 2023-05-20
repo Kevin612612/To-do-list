@@ -1,6 +1,6 @@
 import express, {Request, Response} from "express"
 import mongoose from "mongoose"
-// import cors from "cors";
+import cors from "cors";
 import bodyParser from 'body-parser'
 import path from "path"
 
@@ -14,8 +14,8 @@ const Todo: any = mongoose.model('todo model', todoSchema, 'my deals')
 
 const app = express()
 
-// const corsMiddleware = cors()
-// app.use(corsMiddleware)
+const corsMiddleware = cors()
+app.use(corsMiddleware)
 
 const jsonBodyMiddleware = bodyParser.json()
 app.use(jsonBodyMiddleware)
