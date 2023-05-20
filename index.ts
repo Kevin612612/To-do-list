@@ -26,9 +26,10 @@ const PORT = 3001
 // app.use(express.static(path.resolve(__dirname)));
 
 //HOME PAGE
-<!-- app.get('/', (req: Request, res: Response) => {
-    res.sendFile(__dirname + 'index.html')
-}) -->
+app.get('/', (req: Request, res: Response) => {
+    //res.sendFile(__dirname + 'index.html')
+    console.log('yes')
+})
 
 //GET ALL TODO
 app.get('/todo', async (req: Request, res: Response) => {
