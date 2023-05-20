@@ -7,6 +7,8 @@ const filterOption = document.querySelector('.filter-todo');
 // todoList - list of added todos
 const todoList = document.querySelector('.todo-list'); //ul
 
+const vercelAddress = 'https://to-do-list-orpin-theta.vercel.app'
+
 
 // click button -> add todos
 
@@ -165,7 +167,7 @@ function saveLocalTodos(todo) {
 }
 
 async function saveTodosInDB(todoObject) {
-    await fetch('/todo', {
+    await fetch(`${vercelAddress}/todo`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(todoObject)
@@ -187,7 +189,7 @@ function getTodos() {
 
 
 function getTodosFromDb() {
-    fetch('/todo', {
+    fetch(`${vercelAddress}/todo`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
     })
@@ -213,7 +215,7 @@ function removeLocalTodos(todo) {
 
 
 function removeDBTodos(todoObject) {
-    fetch('/todo', {
+    fetch(`${vercelAddress}/todo`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(todoObject)
@@ -223,7 +225,7 @@ function removeDBTodos(todoObject) {
 
 // { name: todo.firstChild.textContent}
 function markTodoDone(todo) {
-    fetch('/todo/done', {
+    fetch(`${vercelAddress}/todo/done`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: todo })
